@@ -1,7 +1,7 @@
-package controller;
+package sogaeron.gym.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class JoinController {
+public class MyPageController {
 }

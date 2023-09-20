@@ -1,8 +1,7 @@
-package model;
+package sogaeron.gym.model;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import org.springframework.web.bind.annotation.Mapping;
 
 import javax.persistence.*;
 import java.util.Date;

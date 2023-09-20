@@ -1,4 +1,4 @@
-package controller;
+package sogaeron.gym.controller;
 
 
 import org.springframework.stereotype.Controller;
@@ -10,6 +10,7 @@ public class amazontestController {
 
     @GetMapping("/test")
     public String test(){
-        return "test";
+        System.out.println("안녕?");
+        return "dotest.html";
     }
 }

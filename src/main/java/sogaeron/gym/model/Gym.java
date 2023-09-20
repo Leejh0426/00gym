@@ -1,4 +1,4 @@
-package model;
+package sogaeron.gym.model;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
