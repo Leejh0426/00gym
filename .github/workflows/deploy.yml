@@ -67,4 +67,4 @@ jobs:
           --s3-location bucket=$S3_BUCKET_NAME,key=$GITHUB_SHA.zip,bundleType=zip
 
     - name: Run chmod to make gradlew executable
-      run: chmod +x ./gradlew
+      run: chmod=+x ./gradlew
