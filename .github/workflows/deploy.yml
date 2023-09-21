@@ -36,6 +36,10 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
+    - run : touch ./src/main/resources/application.properties
+    - run : echo "${{ secrets.SOGAERON_APPLICATIONPROPERTIES }}" > ./src/main/resources/application.properties
+    - run : cat ./src/main/resources/application.properties
+
     - name: Add permission
       run: chmod +x gradlew
 
