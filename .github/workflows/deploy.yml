@@ -14,6 +14,7 @@ env:
   CODE_DEPLOY_DEPLOYMENT_GROUP_NAME: sogaeron-codedeploy-deployment-group
 
 permissions:
+  id-token: write
   contents: read
 
 jobs:
@@ -28,11 +29,14 @@ jobs:
       uses: actions/checkout@v3
 
     # (2) JDK 11 세팅
-    - name: Set up JDK 11
+    - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
         distribution: 'temurin'
-        java-version: '11'
+        java-version: '17'
+
+    - name: Add permission
+      run: chmod +x gradlew
 
     # (3) Gradle build (Test 제외)
     - name: Build with Gradle
@@ -44,8 +48,8 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-access-key-id: ${{ secrets.AWS_SOGAERON_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SOGAERON_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
 
     # (5) 빌드 결과물을 S3 버킷에 업로드
@@ -65,3 +69,5 @@ jobs:
           --deployment-config-name CodeDeployDefault.AllAtOnce \
           --deployment-group-name ${{ env.CODE_DEPLOY_DEPLOYMENT_GROUP_NAME }} \
           --s3-location bucket=$S3_BUCKET_NAME,key=$GITHUB_SHA.zip,bundleType=zip
+
+    
