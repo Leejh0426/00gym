@@ -23,6 +23,8 @@ public class Reservation {
 
     private int reservation_number;
 
+    private int cond_value;
+
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="user_id")
     private User user;

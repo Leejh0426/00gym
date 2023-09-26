@@ -24,4 +24,6 @@ public class Gym {
     private int total_number;
 
 
+
+
 }
