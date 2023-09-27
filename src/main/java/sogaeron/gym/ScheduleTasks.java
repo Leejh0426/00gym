@@ -18,6 +18,6 @@ public class ScheduleTasks {
 
     @Scheduled(fixedRate = 60000) // 1분에 한번씩
     public void task(){
-
+        reservationService.changeCond();
     }
 }

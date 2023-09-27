@@ -17,16 +17,21 @@ public class User {
     @Column(name="user_id")
     private Long id;
 
+    @Column(name="username")
     private String username;
 
+    @Column(name="address")
     private String address;
 
+    @Column(name="phone_number")
     private String phone_number;
 
+    @Column(name="sex")
     private String sex;
 
+    @Column(name="password")
     private String password;
-
+    @Column(name="nickname")
     private String nickname;
 
 
