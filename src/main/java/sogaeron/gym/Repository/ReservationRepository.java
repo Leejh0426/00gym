@@ -18,4 +18,5 @@ public interface ReservationRepository extends JpaRepository<Reservation,Long> {
     List<Reservation> findCondTimeBetween(@Param("start")LocalDateTime start,@Param("end")LocalDateTime end);
 
 
+    Reservation findByIdAndCondValue(Long id,int value);
 }

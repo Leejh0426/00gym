@@ -21,20 +21,20 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name="reservation_id")
-    private Long Id;
+    private Long id;
 
     @Column(name="reservation_date")
-    private Date reservation_date;
+    private Date reservationDate;
 
     @Column(name="cond_time")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime condTime;
 
     @Column(name="reservation_number")
-    private int reservation_number;
+    private int reservationNumber;
 
     @Column(name="cond_value")
-    private int cond_value;
+    private int condValue;
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="user_id")

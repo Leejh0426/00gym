@@ -32,9 +32,9 @@ public class ReservationService {
         List<Reservation> reservations = reservationRepository.findCondTimeBetween(start,end);
 
         for(Reservation reservation : reservations){
-            System.out.println(reservation.getCond_value());
-            reservation.setCond_value(1);
-            System.out.println(reservation.getCond_value());
+            System.out.println(reservation.getCondValue());
+            reservation.setCondValue(1);
+            System.out.println(reservation.getCondValue());
         }
 
 
