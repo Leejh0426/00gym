@@ -24,10 +24,9 @@ public class Reservation {
     private Long id;
 
     @Column(name="reservation_date")
-    private Date reservationDate;
+    private LocalDateTime reservationDate;
 
     @Column(name="cond_time")
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime condTime;
 
     @Column(name="reservation_number")

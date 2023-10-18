@@ -1,38 +1,31 @@
 <!DOCTYPE html>
 <html>
-<form action="http://52.79.87.246:8080/testreservation" method="POST">
+<form action="http://52.79.87.246:8080//testreservation" method="POST">
+    <br>
     <div>
-      <label for="reservation_id">reservation_id</label>
-      <input name="reservation_id" id="reservation_id" />
+      <label for="reservationDate">reservation_date</label>
+      <input type="datetime-local" name="reservationDate" id="reservationDate"/>
     </div>
     <br>
     <div>
-      <label for="reservation_date">reservation_date</label>
-      <input type="datetime-local" name="reservation_date" id="reservation_date"/>
-    </div>
-    <br>
-    <div>
-        <label for="reservation_number">reservation_number</label>
-        <input name="reservation_number" id="reservation_number"/>
+        <label for="reservationNumber">reservation_number</label>
+        <input type="text" name="reservationNumber" id="reservationNumber"/>
       </div>
     <br>
     <div>
-        <label for="cond_time">cond_time</label>
-        <input type="datetime-local" name="cond_time" id="cond_time"/>
+        <label for="condTime">cond_time</label>
+        <input type="datetime-local" name="condTime" id="condTime"/>
     </div>
     <br>
     <div>
-        <label for="gym_id">gym_id</label>
-        <input name="gym_id" id="gym_id" value=1 />
+        <label for="gymId">gym_id</label>
+        <input type="text" name="gymId" id="gymId" value=1 />
     </div>
     <br>
     <div>
-        <label for="user_id">user_id</label>
-        <input name="user_id" id="user_id" value=1 />
+        <label for="userId">user_id</label>
+        <input type="text" name="userId" id="userId" value=1 />
     </div>
-    <br>
-    <div>
-      <button>Send Info</button>
-    </div>
+        <p><input type="submit"></p>
   </form>
   </html>

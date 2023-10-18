@@ -1,10 +1,8 @@
 package sogaeron.gym.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import sogaeron.gym.controller.DTO.TestReservationDTO;
 import sogaeron.gym.model.Reservation;
 import sogaeron.gym.service.ReservationService;
 
@@ -24,8 +22,10 @@ public class ReservationController {
     }
 
     @PostMapping("/testreservation")
-    public void testreservation(@ModelAttribute Reservation reservation){
+    public void testreservation(@ModelAttribute TestReservationDTO reservation){
+        System.out.println(reservation.getReservationNumber() +"////////////" + reservation.getCondTime());
         reservationService.testreservation(reservation);
+
     }
 
 }
