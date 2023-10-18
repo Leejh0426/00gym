@@ -41,4 +41,7 @@ public class ReservationService {
 
     }
 
+    public void testreservation(Reservation reservation) {
+        reservationRepository.save(reservation);
+    }
 }
