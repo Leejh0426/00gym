@@ -40,7 +40,7 @@ public class ReservationService {
 
 
     }
-
+    @Transactional
     public void testreservation(Reservation reservation) {
         reservationRepository.save(reservation);
     }
