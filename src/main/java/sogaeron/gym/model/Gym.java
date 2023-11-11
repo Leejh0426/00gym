@@ -1,7 +1,9 @@
 package sogaeron.gym.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
@@ -9,6 +11,8 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "gym")
+@Getter
+@Setter
 public class Gym {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)

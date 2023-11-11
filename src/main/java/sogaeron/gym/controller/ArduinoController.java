@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import sogaeron.gym.controller.DTO.ArduinoCond;
+import sogaeron.gym.model.GymStatus;
 import sogaeron.gym.model.Reservation;
 import sogaeron.gym.service.ArduinoService;
 
@@ -19,14 +20,15 @@ public class ArduinoController {
         this.arduinoService = arduinoService;
     }
 
+
     @GetMapping("/arduino_check")
     public ArduinoCond arduino_check(@RequestParam Long id){
-        Reservation reservation = arduinoService.arduino_check(id);
+        GymStatus gymStatus = arduinoService.arduino_check(id);
 
-        if(reservation!=null) {
+        if(gymStatus!=null) {
             ArduinoCond arduinoCond = ArduinoCond.builder()
-                    .id(reservation.getId())
-                    .condValue(reservation.getCondValue())
+                    .id(gymStatus.getId())
+                    .condValue(gymStatus.isCondValue())
                     .build();
 
             return arduinoCond;
@@ -34,11 +36,12 @@ public class ArduinoController {
         else{
             ArduinoCond arduinoCond = ArduinoCond.builder()
                     .id(id)
-                    .condValue(0)
+                    .condValue(false)
                     .build();
 
             return arduinoCond;
         }
 
     }
+
 }

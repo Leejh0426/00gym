@@ -26,22 +26,13 @@ public class Reservation {
     @Column(name="reservation_date")
     private LocalDateTime reservationDate;
 
-    @Column(name="cond_time")
-    private LocalDateTime condTime;
-
     @Column(name="reservation_number")
     private int reservationNumber;
 
-    @Column(name="cond_value")
-    private int condValue;
 
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="user_id")
-    private User user;
-
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="gym_id")
-    private Gym gym;
+    @JoinColumn(name="gymstatus_id")
+    private GymStatus gymStatus;
 
 
 }

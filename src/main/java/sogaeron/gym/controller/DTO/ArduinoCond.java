@@ -9,10 +9,10 @@ import lombok.NoArgsConstructor;
 public class ArduinoCond {
 
     private Long id;
-    private int condValue;
+    private boolean condValue;
 
     @Builder
-    public ArduinoCond(Long id, int condValue){
+    public ArduinoCond(Long id, boolean condValue){
         this.id = id;
         this.condValue = condValue;
     }
