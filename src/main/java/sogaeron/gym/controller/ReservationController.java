@@ -1,11 +1,8 @@
 package sogaeron.gym.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sogaeron.gym.controller.DTO.CheckReservationDTO;
 import sogaeron.gym.controller.DTO.ReservationDTO;
-import sogaeron.gym.controller.DTO.TestReservationDTO;
-import sogaeron.gym.model.Reservation;
 import sogaeron.gym.service.ReservationService;
 
 import java.util.List;

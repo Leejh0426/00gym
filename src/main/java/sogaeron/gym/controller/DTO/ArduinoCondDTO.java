@@ -6,13 +6,13 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class ArduinoCond {
+public class ArduinoCondDTO {
 
     private Long id;
     private boolean condValue;
 
     @Builder
-    public ArduinoCond(Long id, boolean condValue){
+    public ArduinoCondDTO(Long id, boolean condValue){
         this.id = id;
         this.condValue = condValue;
     }
