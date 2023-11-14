@@ -22,8 +22,8 @@ public class GymController {
      * 지역에 맞는 체육관들을 다 불러온다.
      */
     @GetMapping("/gym")
-    public List<Gym> findGym(@RequestBody HashMap<String,Object> map){
-        List<Gym> gyms = gymService.findGym((String) map.get("location"));
+    public List<Gym> findGym(@RequestParam String location){
+        List<Gym> gyms = gymService.findGym(location);
         return gyms;
     }
 

@@ -25,5 +25,7 @@ public class GymService {
     public List<Gym> findGym(String location) {
         List<Gym> gyms = gymRepository.findBylocation(location);
         return gyms;
+
     }
+
 }
