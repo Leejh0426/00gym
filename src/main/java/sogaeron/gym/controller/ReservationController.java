@@ -5,6 +5,7 @@ import sogaeron.gym.controller.DTO.CheckReservationDTO;
 import sogaeron.gym.controller.DTO.ReservationDTO;
 import sogaeron.gym.service.ReservationService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -22,10 +23,12 @@ public class ReservationController {
      * 예약하기
      */
     @PostMapping("/reservation")
-    public String reservation(@RequestBody ReservationDTO reservationDTO){
+    public List<String> reservation(@RequestBody ReservationDTO reservationDTO){
         String result = reservationService.doreservation(reservationDTO);
 
-        return result;
+        ArrayList<String> results = new ArrayList<>();  // json으로 보내기 위해서 객체에 담았음
+        results.add(result);
+        return results;
 
     }
 
