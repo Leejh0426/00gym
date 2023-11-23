@@ -8,6 +8,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * DB의 시간대 별 풋살장 현황 테이블에 접근하여 데이터를 조작하는 클래스
+ */
 public interface GymStatusRepository extends JpaRepository<GymStatus,Long> {
     @Query("SELECT g FROM GymStatus g WHERE g.gym.id=:id And g.dateTime > :start AND g.dateTime < :end")
     List<GymStatus> findByGym_IdAndDateTime(Long id, LocalDateTime start,LocalDateTime end);

@@ -16,6 +16,9 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Table(name = "reservation")
+/**
+ * DB 예약 정보 테이블과 매칭될 클래스
+ */
 public class Reservation {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,10 +26,10 @@ public class Reservation {
     @Column(name="reservation_id")
     private Long id;
 
-    @Column(name="reservation_date")
+    @Column(name="reservation_date", nullable = false)
     private LocalDateTime reservationDate;
 
-    @Column(name="reservation_number")
+    @Column(name="reservation_number", nullable = false)
     private int reservationNumber;
 
 

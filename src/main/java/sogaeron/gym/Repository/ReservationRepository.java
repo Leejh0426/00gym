@@ -11,15 +11,10 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * DB의 예약 정보 테이블에 접근하여 데이터를 조작하는 클래스
+ */
 public interface ReservationRepository extends JpaRepository<Reservation,Long> {
 
 
-
-
-
-
-    /**
-     * 이렇게도 된다는거 확인
-     */
-    //Reservation findByIdAndCondTimeBetween(Long id, LocalDateTime localDateTime, LocalDateTime localDateTime1);
 }

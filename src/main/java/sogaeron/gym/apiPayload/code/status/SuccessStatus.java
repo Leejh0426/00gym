@@ -8,6 +8,9 @@ import sogaeron.gym.apiPayload.code.ReasonDTO;
 
 @Getter
 @AllArgsConstructor
+/**
+ * API 응답 통일 관련 클래스
+ */
 public enum SuccessStatus implements BaseCode {
 
     //일반적인 응답

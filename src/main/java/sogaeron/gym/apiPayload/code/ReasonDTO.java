@@ -6,6 +6,9 @@ import org.springframework.http.HttpStatus;
 
 @Getter
 @Builder
+/**
+ * API 응답 통일 관련 클래스
+ */
 public class ReasonDTO {
     private HttpStatus httpStatus;
 

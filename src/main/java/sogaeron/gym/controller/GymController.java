@@ -9,9 +9,15 @@ import sogaeron.gym.service.GymService;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * 브라우저 상의 웹클라이언트의 풋살장 정보 관련 요청 및 응답을 처리하는 클래스
+ */
 @RestController
 public class GymController {
 
+    /**
+     * 의존성 주입
+     */
     final  GymService gymService;
 
     public GymController(GymService gymService) {
@@ -20,7 +26,7 @@ public class GymController {
 
 
     /**
-     * 지역에 맞는 체육관들을 다 불러온다.
+     * 해당 지역 풋살장 목록 조회
      */
     @GetMapping("/gym")
     public ApiResponse<List<Gym>> findGym(@RequestParam String location){

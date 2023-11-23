@@ -11,6 +11,9 @@ import sogaeron.gym.apiPayload.code.status.SuccessStatus;
 @Getter
 @AllArgsConstructor
 @JsonPropertyOrder({"isSuccess", "code", "message", "result"})
+/**
+ * API 응답 통일 관련 클래스
+ */
 public class ApiResponse<T> {
 
     @JsonProperty("isSuccess") // key값을 매핑시켜준다.
