@@ -46,7 +46,7 @@ public class GymStatusService {
         for(int i=0;i<gymstatuses.size();i++){
             GymStatus gymStatus = gymstatuses.get(i);
 
-            if((gymStatus.getRemainder() != gymStatus.getTotal_number())
+            if((gymStatus.getRemainder() != gymStatus.getTotalNumber())
             && (gymStatus.getDateTime().isAfter(LocalDateTime.now()))
                     &&(gymStatus.getDateTime().isBefore(LocalDateTime.now().plusMinutes(10))) )
             {

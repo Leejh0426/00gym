@@ -3,6 +3,7 @@ package sogaeron.gym.controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import sogaeron.gym.apiPayload.ApiResponse;
 import sogaeron.gym.controller.DTO.ArduinoCondDTO;
 import sogaeron.gym.model.GymStatus;
 import sogaeron.gym.service.ArduinoService;
@@ -18,7 +19,7 @@ public class ArduinoController {
 
 
     @GetMapping("/arduino_check")
-    public ArduinoCondDTO arduino_check(@RequestParam Long id){
+    public ApiResponse<ArduinoCondDTO> arduino_check(@RequestParam Long id){
         GymStatus gymStatus = arduinoService.arduino_check(id);
 
         if(gymStatus!=null) {
@@ -27,7 +28,7 @@ public class ArduinoController {
                     .condValue(gymStatus.isCondValue())
                     .build();
 
-            return arduinoCondDTO;
+            return ApiResponse.onSuccess(arduinoCondDTO) ;
         }
         else{
             ArduinoCondDTO arduinoCondDTO = ArduinoCondDTO.builder()
@@ -35,7 +36,7 @@ public class ArduinoController {
                     .condValue(false)
                     .build();
 
-            return arduinoCondDTO;
+            return ApiResponse.onSuccess(arduinoCondDTO) ;
         }
 
     }

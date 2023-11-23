@@ -81,7 +81,7 @@ public class ReservationService {
 
         // 예약이 취소됨으로 인해 gymstatus 값들 다시 복구
         GymStatus gymStatus = reservation.getGymStatus();
-        if(gymStatus.getRemainder()+reservation.getReservationNumber() == gymStatus.getTotal_number())
+        if(gymStatus.getRemainder()+reservation.getReservationNumber() == gymStatus.getTotalNumber())
             gymStatus.setCondValue(false);
         gymStatus.setRemainder(gymStatus.getRemainder()+reservation.getReservationNumber());
 

@@ -30,7 +30,7 @@ public class GymStatus {
     private LocalDateTime dateTime;
 
     @Column(name="total_number")
-    private int total_number;
+    private int totalNumber;  //2023-11-22 카멜케이스로 고침
 
     @Column(name="cond_value")
     private boolean condValue;

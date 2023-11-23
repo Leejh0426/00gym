@@ -2,6 +2,7 @@ package sogaeron.gym.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import sogaeron.gym.apiPayload.ApiResponse;
 import sogaeron.gym.model.Gym;
 import sogaeron.gym.service.GymService;
 
@@ -22,9 +23,9 @@ public class GymController {
      * 지역에 맞는 체육관들을 다 불러온다.
      */
     @GetMapping("/gym")
-    public List<Gym> findGym(@RequestParam String location){
+    public ApiResponse<List<Gym>> findGym(@RequestParam String location){
         List<Gym> gyms = gymService.findGym(location);
-        return gyms;
+        return ApiResponse.onSuccess(gyms);
     }
 
 

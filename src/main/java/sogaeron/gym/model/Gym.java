@@ -24,10 +24,10 @@ public class Gym {
     private String location;
 
     @Column(name="gym_name")
-    private String gym_name;
+    private String gymName;
 
     @Column(name="total_number")
-    private int total_number;
+    private int totalNumber;
 
 
 
