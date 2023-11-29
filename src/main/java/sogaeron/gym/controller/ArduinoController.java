@@ -94,5 +94,8 @@ public class ArduinoController {
     public String test() {
         return "Hello, world!";
     }
-
+    @GetMapping("/getPort")
+    public String getPort(HttpServletRequest request) {
+        return String.valueOf(request.getServerPort());
+    }
 }
