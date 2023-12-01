@@ -34,13 +34,10 @@ public class ArduinoService {
     public GymStatus arduino_check(Long id) {
         List<GymStatus> gymstatuses = gymStatusRepository.findByGym_IdAndCondValue(id, true);
 
-        LocalDateTime start = LocalDateTime.now();
-        LocalDateTime end = LocalDateTime.now().plusMinutes(10);
-
         if(gymstatuses!=null){
             for(int i=0;i<gymstatuses.size();i++){
                 LocalDateTime dateTime = gymstatuses.get(i).getDateTime();
-                if(dateTime.isAfter(start) && dateTime.isBefore(end)){
+                if(dateTime.plusHours(1).isAfter(now()) && dateTime.minusMinutes(10).isBefore(now())){
                     return gymstatuses.get(i);
                 }
             }

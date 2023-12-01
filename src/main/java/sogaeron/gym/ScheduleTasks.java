@@ -15,7 +15,7 @@ public class ScheduleTasks {
    @Autowired
     GymStatusService gymStatusService;
 
-    @Scheduled(fixedRate = 60000) // 1분에 한번씩
+    @Scheduled(fixedRate = 30000) // 30초에 한번씩
     public void task(){
         gymStatusService.changeCond();
             }

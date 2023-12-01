@@ -54,7 +54,7 @@ public class GymStatusService {
     }
 
     /**
-     * 타이머
+     * 타이머 (예약시간-10분) < 현재시간 < (예약시간 + 1hr) 이면 condvalue 값을 1로 수정
      */
     @Transactional
     public void changeCond() {
@@ -65,10 +65,9 @@ public class GymStatusService {
             GymStatus gymStatus = gymstatuses.get(i);
 
             if((gymStatus.getRemainder() != gymStatus.getTotalNumber())
-            && (gymStatus.getDateTime().isAfter(LocalDateTime.now()))
-                    &&(gymStatus.getDateTime().isBefore(LocalDateTime.now().plusMinutes(10))) )
+            && (gymStatus.getDateTime().minusMinutes(10).isBefore(LocalDateTime.now()))
+                    &&(gymStatus.getDateTime().plusHours(1).isAfter(LocalDateTime.now())))
             {
-
                 gymStatus.setCondValue(true);
                 System.out.println(gymStatus.isCondValue());
             }
@@ -76,6 +75,7 @@ public class GymStatusService {
 
 
     }
+
 
 
 
