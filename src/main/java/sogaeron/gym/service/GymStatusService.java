@@ -49,7 +49,11 @@ public class GymStatusService {
         LocalDateTime end = findGymStatusDTO.getTime().plusDays(1);
         LocalDateTime newend = LocalDateTime.of(end.getYear(),end.getMonth(),end.getDayOfMonth(),0,0,0);
 
+
+
         List<GymStatus> gymStatuses = gymStatusRepository.findByGym_IdAndDateTime(id,newstart,newend);
+
+        System.out.println(gymStatuses.stream().toList());
         return gymStatuses;
     }
 
